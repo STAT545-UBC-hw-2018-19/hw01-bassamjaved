@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 library(gapminder)
+library(tidyverse)
 ```
 
 ### Here is a preview of the data
@@ -27,8 +28,9 @@ head(gapminder)
 summary(gapminder)
 ```
 
-### Here is a summary of the subset of the year 1960.
+### Here is the life expectancy in Canada prior to the year 2000.
 ```{r}
-x <- subset(gapminder,year==1952)
-summary(x[["lifeExp"]])
+gapminder %>% 
+  filter(year < 2000 & country == "Canada") %>% 
+  select(year, lifeExp)
 ```
