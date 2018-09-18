@@ -3,7 +3,19 @@ STAT545\_hw01\_dataframe
 
 ``` r
 library(gapminder)
+library(tidyverse)
 ```
+
+    ## ── Attaching packages ────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+
+    ## ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
+    ## ✔ tibble  1.4.2     ✔ dplyr   0.7.6
+    ## ✔ tidyr   0.8.1     ✔ stringr 1.3.1
+    ## ✔ readr   1.1.1     ✔ forcats 0.3.0
+
+    ## ── Conflicts ───────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
 
 ### Here is a preview of the data
 
@@ -52,12 +64,24 @@ summary(gapminder)
     ##  Max.   :1.319e+09   Max.   :113523.1  
     ## 
 
-### Here is a summary of the subset of the year 1960.
+### Here is the life expectancy in Canada prior to the year 2000.
 
 ``` r
-x <- subset(gapminder,year==1952)
-summary(x[["lifeExp"]])
+gapminder %>% 
+  filter(year < 2000 & country == "Canada") %>% 
+  select(year, lifeExp)
 ```
 
-    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-    ##   28.80   39.06   45.14   49.06   59.77   72.67
+    ## # A tibble: 10 x 2
+    ##     year lifeExp
+    ##    <int>   <dbl>
+    ##  1  1952    68.8
+    ##  2  1957    70.0
+    ##  3  1962    71.3
+    ##  4  1967    72.1
+    ##  5  1972    72.9
+    ##  6  1977    74.2
+    ##  7  1982    75.8
+    ##  8  1987    76.9
+    ##  9  1992    78.0
+    ## 10  1997    78.6
