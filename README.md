@@ -15,4 +15,4 @@ x | z
 ### Homework list
 - [x] link to UBC Canvas
 - [x] readme file
-- [ ] data exploration
+- [x] data exploration
