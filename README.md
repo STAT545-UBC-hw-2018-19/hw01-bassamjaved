@@ -18,3 +18,12 @@ x | z
 - [x] data exploration
 
 This line was added *locally*.
+
+Here is link to a useful page for working with git and GitHub.com [HappyGitWithR](http://happygitwithr.com)
+
+
+# And now a little bit about me...\!
+
+I am a first year PhD student at UBC's [Institute for Resources, Environment and Sustainability](http://ires.ubc.ca). I have a background in engineering. I've lived in Vancouver for four years.
+
+![Vancouver_skyline](https://goo.gl/images/EqCPDY)
